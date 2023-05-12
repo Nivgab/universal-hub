@@ -225,13 +225,13 @@ Button2.BackgroundTransparency = 0.800
 Button2.Position = UDim2.new(0.49999997, 0, 0.0194322504, 0)
 Button2.Size = UDim2.new(0, 170, 0, 50)
 Button2.Font = Enum.Font.Cartoon
-Button2.Text = "soon"
+Button2.Text = "better fe auto use everyone tools"
 Button2.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button2.TextScaled = true
 Button2.TextSize = 14.000
 Button2.TextWrapped = true
 Button2.MouseButton1Down:connect(function()
-
+while task.wait() do for i,v in pairs(game:GetDescendants()) do if v.Name == "Remote" then v:FireServer() end end end
 end)
 
 UIStroke_7.Parent = Button2
