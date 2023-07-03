@@ -1,7 +1,7 @@
 
 -- Instances:
 --Don't bother touching this.
-
+local room = game.ReplicatedStorage.GameData.LatestRoom.Value
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local UIStroke = Instance.new("UIStroke")
@@ -225,13 +225,13 @@ Button2.BackgroundTransparency = 0.800
 Button2.Position = UDim2.new(0.49999997, 0, 0.0194322504, 0)
 Button2.Size = UDim2.new(0, 170, 0, 50)
 Button2.Font = Enum.Font.Cartoon
-Button2.Text = "better fe auto use everyone tools"
+Button2.Text = "fe use everyone tools"
 Button2.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button2.TextScaled = true
 Button2.TextSize = 14.000
 Button2.TextWrapped = true
 Button2.MouseButton1Down:connect(function()
-while task.wait() do for i,v in pairs(game:GetDescendants()) do if v.Name == "Remote" then v:FireServer() end end end
+for i,v in pairs(game:GetDescendants()) do if v.Name == "Remote" then v:FireServer() end end 
 end)
 
 UIStroke_7.Parent = Button2
@@ -248,13 +248,15 @@ Button3.BackgroundTransparency = 0.800
 Button3.Position = UDim2.new(0.0259066951, 0, 0.115860835, 0)
 Button3.Size = UDim2.new(0, 170, 0, 50)
 Button3.Font = Enum.Font.Cartoon
-Button3.Text = ""
+Button3.Text = "improve scripts"
 Button3.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button3.TextScaled = true
 Button3.TextSize = 14.000
 Button3.TextWrapped = true
 Button3.MouseButton1Down:connect(function()
-	
+	game:GetService("RunService").Heartbeat:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.huge
+end)
 end)
 
 UIStroke_8.Parent = Button3
@@ -271,13 +273,26 @@ Button4.BackgroundTransparency = 0.800
 Button4.Position = UDim2.new(0.497409284, 0, 0.115860835, 0)
 Button4.Size = UDim2.new(0, 170, 0, 50)
 Button4.Font = Enum.Font.Cartoon
-Button4.Text = "soon"
+Button4.Text = "Improve Network ownership "
 Button4.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button4.TextScaled = true
 Button4.TextSize = 14.000
 Button4.TextWrapped = true
 Button4.MouseButton1Down:connect(function()
-	
+	local netaccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    RunService.RenderStepped:Connect(function ()
+        for _, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                v.MaximumSimulationRadius = 0
+                sethiddenproperty(v, 'SimulationRadius', 0)
+            end
+        end
+    end)
+    game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+    setsimulationradius(math.huge)
+end)
+coroutine.resume(netaccess)
 end)
 
 UIStroke_9.Parent = Button4
@@ -294,13 +309,38 @@ Button5.BackgroundTransparency = 0.800
 Button5.Position = UDim2.new(0.031088043, 0, 0.213083059, 0)
 Button5.Size = UDim2.new(0, 170, 0, 50)
 Button5.Font = Enum.Font.Cartoon
-Button5.Text = "soon"
+Button5.Text = "fe kill figure door 50 pc only (use at door 49)"
 Button5.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button5.TextScaled = true
 Button5.TextSize = 14.000
 Button5.TextWrapped = true
 Button5.MouseButton1Down:connect(function()
-	
+    local netaccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    RunService.RenderStepped:Connect(function ()
+        for _, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                v.MaximumSimulationRadius = 0
+                sethiddenproperty(v, 'SimulationRadius', 0)
+            end
+        end
+    end)
+    game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+    setsimulationradius(math.huge)
+end)
+coroutine.resume(netaccess) for i, v in pairs(game.Workspace.CurrentRooms['50']:GetDescendants()) do
+    if v.ClassName == "Attachment" then
+        task.wait()
+        v.WorldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
+
+game.Workspace.CurrentRooms['50'].DescendantAdded:Connect(function(v)
+    if v.ClassName == "Attachment" then
+        task.wait()
+        v.WorldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end)
 end)
 
 UIStroke_10.Parent = Button5
@@ -317,13 +357,38 @@ Button6.BackgroundTransparency = 0.800
 Button6.Position = UDim2.new(0.497409284, 0, 0.213083059, 0)
 Button6.Size = UDim2.new(0, 170, 0, 50)
 Button6.Font = Enum.Font.Cartoon
-Button6.Text = "soon"
+Button6.Text = "fe kill door 100 figure pc only (use at door 99)"
 Button6.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button6.TextScaled = true
 Button6.TextSize = 14.000
 Button6.TextWrapped = true
 Button6.MouseButton1Down:connect(function()
+local netaccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    RunService.RenderStepped:Connect(function ()
+        for _, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                v.MaximumSimulationRadius = 0
+                sethiddenproperty(v, 'SimulationRadius', 0)
+            end
+        end
+    end)
+    game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+    setsimulationradius(math.huge)
+end)
+coroutine.resume(netaccess) for i, v in pairs(game.Workspace.CurrentRooms['100']:GetDescendants()) do
+    if v.ClassName == "Attachment" then
+        task.wait()
+        v.WorldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
 
+game.Workspace.CurrentRooms['100'].DescendantAdded:Connect(function(v)
+    if v.ClassName == "Attachment" then
+        task.wait()
+        v.WorldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end)
 end)
 
 UIStroke_11.Parent = Button6
@@ -340,13 +405,38 @@ Button7.BackgroundTransparency = 0.800
 Button7.Position = UDim2.new(0.0284973681, 0, 0.30990845, 0)
 Button7.Size = UDim2.new(0, 170, 0, 50)
 Button7.Font = Enum.Font.Cartoon
-Button7.Text = "soon"
+Button7.Text = "fe destroy everything pc only (better break doors)"
 Button7.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button7.TextScaled = true
 Button7.TextSize = 14.000
 Button7.TextWrapped = true
 Button7.MouseButton1Down:connect(function()
+local netaccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    RunService.RenderStepped:Connect(function ()
+        for _, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                v.MaximumSimulationRadius = 0
+                sethiddenproperty(v, 'SimulationRadius', 0)
+            end
+        end
+    end)
+    game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+    setsimulationradius(math.huge)
+end)
+coroutine.resume(netaccess) for i, v in pairs(game.Workspace.CurrentRooms[room]:GetDescendants()) do
+    if v.ClassName == "Attachment" then
+        task.wait()
+        v.WorldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
 
+game.Workspace.CurrentRooms[room].DescendantAdded:Connect(function(v)
+    if v.ClassName == "Attachment" then
+        task.wait()
+        v.WorldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end)
 end)
 
 UIStroke_12.Parent = Button7
@@ -363,13 +453,53 @@ Button8.BackgroundTransparency = 0.800
 Button8.Position = UDim2.new(0.49999997, 0, 0.30990845, 0)
 Button8.Size = UDim2.new(0, 170, 0, 50)
 Button8.Font = Enum.Font.Cartoon
-Button8.Text = "Rename Me!"
+Button8.Text = "Massive range"
 Button8.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button8.TextScaled = true
 Button8.TextSize = 14.000
 Button8.TextWrapped = true
+local args = {...}
 Button8.MouseButton1Down:connect(function()
-	print("Script Here!")
+
+     while wait(0.2) do
+    for i,v in pairs(game.Workspace.CurrentRooms:GetDescendants()) do
+        if v.Name == "ClientOpen" and v:IsA("RemoteEvent") then
+            v:FireServer()
+        end
+    end
+end
+
+local function getRoot(char)
+    local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+    return rootPart
+end
+
+local speaker = game.Players.LocalPlayer
+local root = getRoot(speaker.Character) or speaker.Character:FindFirstChildWhichIsA("BasePart")
+
+
+local function touch(x)
+    x = x:FindFirstAncestorWhichIsA("Part")
+    if x then
+        if firetouchinterest then
+            task.spawn(function()
+                firetouchinterest(x, root, 0)
+                wait()
+                firetouchinterest(x, root, 1)
+            end)
+        end
+        x.CFrame = root.CFrame
+    end
+end
+
+while wait() do
+    for _, descendant in ipairs(workspace.CurrentRooms:GetDescendants()) do
+        if descendant:IsA("TouchTransmitter") or descendant:IsA("TouchInterest") then
+            touch(descendant)
+        end
+    end
+end
+
 end)
 
 UIStroke_13.Parent = Button8
@@ -386,13 +516,54 @@ Button9.BackgroundTransparency = 0.800
 Button9.Position = UDim2.new(0.0284973681, 0, 0.411099017, 0)
 Button9.Size = UDim2.new(0, 170, 0, 50)
 Button9.Font = Enum.Font.Cartoon
-Button9.Text = "Rename Me!"
+Button9.Text = "fe become figure (must not open door 50 or 100)"
 Button9.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button9.TextScaled = true
 Button9.TextSize = 14.000
 Button9.TextWrapped = true
 Button9.MouseButton1Down:connect(function()
-	print("Script Here!")
+	
+  
+
+local netaccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    RunService.RenderStepped:Connect(function ()
+        for _, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                v.MaximumSimulationRadius = 0
+                sethiddenproperty(v, 'SimulationRadius', 0)
+            end
+        end
+    end)
+    game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+    setsimulationradius(math.huge)
+end)
+coroutine.resume(netaccess)
+
+function InstanceStringFind(obj, str, mode)
+    if not obj or not string or typeof(obj) ~= 'Instance' or typeof(str) ~= 'string' or typeof(mode) ~= 'boolean' then return; end
+    local x;
+    if mode == true then
+    x = obj:GetDescendants();
+    else x = obj:GetChildren();
+end
+    for _, v in pairs(x) do
+    if string.find(v.Name, str) then
+    return v;
+end;
+end;
+end
+
+function tpjeff(player)
+local jeff = InstanceStringFind(game.Workspace, 'FigureRagdoll', false)
+if jeff and (jeff:IsA('Model') or jeff:IsA('BasePart')) then 
+local pchar = player.Character
+if pchar and pchar:FindFirstChild('HumanoidRootPart') and pchar:FindFirstChildOfClass('Humanoid') and pchar:FindFirstChildOfClass('Humanoid').Health > 0 then jeff:PivotTo(pchar:GetPivot()) task.wait() end end
+end
+
+while task.wait() do 
+tpjeff(game.Players.LocalPlayer)
+end
 end)
 
 UIStroke_14.Parent = Button9
@@ -409,13 +580,55 @@ Button10.BackgroundTransparency = 0.800
 Button10.Position = UDim2.new(0.49999997, 0, 0.411099017, 0)
 Button10.Size = UDim2.new(0, 170, 0, 50)
 Button10.Font = Enum.Font.Cartoon
-Button10.Text = "Rename Me!"
+Button10.Text = "fe dupe door 100 (must use before 99)"
 Button10.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button10.TextScaled = true
 Button10.TextSize = 14.000
 Button10.TextWrapped = true
 Button10.MouseButton1Down:connect(function()
-	print("Script Here!")
+	function range()
+      while wait(0.2) do
+    for i,v in pairs(game.Workspace.CurrentRooms:GetDescendants()) do
+        if v.Name == "ClientOpen" and v:IsA("RemoteEvent") then
+            v:FireServer()
+        end
+    end
+end
+
+local function getRoot(char)
+    local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+    return rootPart
+end
+
+local speaker = game.Players.LocalPlayer
+local root = getRoot(speaker.Character) or speaker.Character:FindFirstChildWhichIsA("BasePart")
+
+
+local function touch(x)
+    x = x:FindFirstAncestorWhichIsA("Part")
+    if x then
+        if firetouchinterest then
+            task.spawn(function()
+                firetouchinterest(x, root, 0)
+                wait()
+                firetouchinterest(x, root, 1)
+            end)
+        end
+        x.CFrame = root.CFrame
+    end
+end
+
+while wait() do
+    for _, descendant in ipairs(workspace.CurrentRooms:GetDescendants()) do
+        if descendant:IsA("TouchTransmitter") or descendant:IsA("TouchInterest") then
+            touch(descendant)
+        end
+    end
+end
+    end
+    workspace.CurrentRooms.DescendantAdded:Connect(function(v) if v.Name == tostring(99) then 
+          range()
+        end    end)
 end)
 
 UIStroke_15.Parent = Button10
@@ -457,13 +670,20 @@ Button12.BackgroundTransparency = 0.800
 Button12.Position = UDim2.new(0.497409284, 0, 0.506337106, 0)
 Button12.Size = UDim2.new(0, 170, 0, 50)
 Button12.Font = Enum.Font.Cartoon
-Button12.Text = "Rename Me!"
+Button12.Text = "fe lag everyone"
 Button12.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button12.TextScaled = true
 Button12.TextSize = 14.000
 Button12.TextWrapped = true
 Button12.MouseButton1Down:connect(function()
-	print("Script Here!")
+	scr = function()
+    while task.wait() do
+            for i = 1, 10 do
+                game:GetService("ReplicatedStorage").EntityInfo.Footstep:FireServer()
+            end
+    end
+end       
+scr()
 end)
 
 UIStroke_17.Parent = Button12
@@ -480,13 +700,53 @@ Button11.BackgroundTransparency = 0.800
 Button11.Position = UDim2.new(0.0259066951, 0, 0.506337106, 0)
 Button11.Size = UDim2.new(0, 170, 0, 50)
 Button11.Font = Enum.Font.Cartoon
-Button11.Text = "Rename Me!"
+Button11.Text = "fe make figure stuck"
 Button11.TextColor3 = Color3.fromRGB(255, 222, 189)
 Button11.TextScaled = true
 Button11.TextSize = 14.000
 Button11.TextWrapped = true
 Button11.MouseButton1Down:connect(function()
-	print("Script Here!")
+	local netaccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    RunService.RenderStepped:Connect(function ()
+        for _, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                v.MaximumSimulationRadius = 0
+                sethiddenproperty(v, 'SimulationRadius', 0)
+            end
+        end
+    end)
+    game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+    setsimulationradius(math.huge)
+end)
+coroutine.resume(netaccess)
+
+function InstanceStringFind(obj, str, mode)
+    if not obj or not string or typeof(obj) ~= 'Instance' or typeof(str) ~= 'string' or typeof(mode) ~= 'boolean' then return; end
+    local x;
+    if mode == true then
+    x = obj:GetDescendants();
+    else x = obj:GetChildren();
+end
+    for _, v in pairs(x) do
+    if string.find(v.Name, str) then
+    return v;
+end;
+end;
+end
+
+function tpjeff(player)
+if workspace and workspace:FindFirstChild("CurrentRooms") and workspace.CurrentRooms:FindFirstChild("50") and workspace.CurrentRooms["50"]:FindFirstChild("FigureSetup") and workspace.CurrentRooms["50"].FigureSetup:FindFirstChild("FigureRagdoll") then
+local jeff = InstanceStringFind(workspace.CurrentRooms["50"].FigureSetup, 'FigureRagdoll', false)
+if jeff and (jeff:IsA('Model') or jeff:IsA('BasePart')) then
+local pchar = player.Character
+if pchar and pchar:FindFirstChild('HumanoidRootPart') and pchar:FindFirstChildOfClass('Humanoid') and pchar:FindFirstChildOfClass('Humanoid').Health > 0 then jeff:PivotTo(CFrame.new(0, 0, 0)) task.wait() end end
+end
+end
+
+while task.wait() do 
+tpjeff(game.Players.LocalPlayer)
+end
 end)
 
 UIStroke_18.Parent = Button11
