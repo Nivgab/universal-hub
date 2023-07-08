@@ -677,13 +677,17 @@ Button12.TextSize = 14.000
 Button12.TextWrapped = true
 Button12.MouseButton1Down:connect(function()
 	scr = function()
-    while task.wait() do task.spawn(function()
-            for i = 1, 25 do
+
+task.spawn(function()
+            for i = 1, 50 do
                 game:GetService("ReplicatedStorage").EntityInfo.Footstep:FireServer()
             end end)
-    end
-end       while task.wait() do task.spawn(function()
-scr() end) end
+    
+end       
+game:GetService("RunService").RenderStepped:Connect(function()
+    scr()
+end)
+ 
 end)
 
 UIStroke_17.Parent = Button12
