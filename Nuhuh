@@ -679,7 +679,7 @@ Button12.MouseButton1Down:connect(function()
 	scr = function()
 
 task.spawn(function()
-            for i = 1, 50 do
+            for i = 1, 25 do
                 game:GetService("ReplicatedStorage").EntityInfo.Footstep:FireServer()
             end end)
     
